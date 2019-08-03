@@ -1,0 +1,15 @@
+<script>
+var array1 = ['aaa', 'bbb', 'ccc', 'ddd', 'eee'];
+var array2 = ['aaa', 'ccc', 'ddd'];
+
+array1.filter(item => array2.some(innerItem => item === innerItem))
+    .forEach(item => console.log(item));
+
+// same result use 'return'
+array1.filter((item) => {
+    return array2.some((innerItem) => {
+            return item === innerItem;
+        });
+})
+.forEach(item => console.log(item));
+</script>
